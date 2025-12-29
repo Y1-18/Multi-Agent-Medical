@@ -1,0 +1,58 @@
+
+FROM nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04
+
+# Avoid prompts during installation
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+
+# Install Python and System Dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3.11 \
+    python3-pip \
+    python3-dev \
+    ffmpeg \
+    curl \
+    build-essential \
+    # OpenCV & Image Processing dependencies
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    libsm6 \
+    libxrender1 \
+    libxext6 \
+    libpng-dev \
+    libjpeg-dev \
+    # XML processing
+    libxml2-dev \
+    libxslt1-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set python3.11 as the default 'python' command
+RUN ln -s /usr/bin/python3.11 /usr/bin/python
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements first to leverage Docker cache
+COPY requirements.txt .
+
+# Install Python dependencies
+# Note: Ensure torch in requirements.txt is the CUDA version
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY . .
+
+# Create necessary directories for the app
+RUN mkdir -p uploads/backend uploads/frontend uploads/skin_lesion_output uploads/speech data
+
+# Expose FastAPI port
+EXPOSE 8000
+
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+
+CMD ["python", "main.py"]
