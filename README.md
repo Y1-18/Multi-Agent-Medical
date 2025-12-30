@@ -42,7 +42,7 @@ A central Decision Agent coordinates agent selection based on user intent and in
 └── Docker
 ```
 
-```
+---
 ## Medical Image Analysis
 
 The system supports medical image inference tasks including:
@@ -54,15 +54,16 @@ The system supports medical image inference tasks including:
 - Brain tumor classification from MRI (Vision Transformer)
 
 Models are implemented using Hugging Face Transformers and PyTorch.
-```
+---
 
-```
+---
 ## Retrieval-Augmented Generation (RAG)
 
 RAG is implemented using a Qdrant vector database and Azure OpenAI embeddings.
 Responses are generated only when sufficient, relevant medical context is retrieved, ensuring grounded and reliable outputs.
-```
-```
+---
+
+---
 ## Safety and Guardrails
 
 Safety is enforced through multiple layers:
@@ -76,7 +77,8 @@ Safety is enforced through multiple layers:
 -Refusal or fallback behavior when evidence is insufficient
 
 The system is designed to minimize hallucinations and prevent unsafe medical conclusions
-```
+---
+
 ##Installation
 ```bash
 
@@ -85,11 +87,12 @@ cd Multi-Agent-Medical
 pip install -r requirements.txt
 python main.py
 python app.py
-```
-```
+---
+
+---
 ##Disclaimer
 
 -This system is for research and educational purposes only.
 -It is not a medical device and must not be used for diagnosis or treatment.
 -Always consult qualified healthcare professionals for medical decisions
-```
+---
