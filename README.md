@@ -93,6 +93,4 @@ python app.py
 ## Disclaimer
 
 - This system is for research and educational purposes only.
-- It is not a medical device and must not be used for diagnosis or treatment.
-- Always consult qualified healthcare professionals for medical decisions
 ---
