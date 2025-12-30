@@ -52,8 +52,13 @@ The system supports medical image inference tasks including:
 Yasser18/swin_skin_lesion
 ```
 - Chest X-ray disease detection (Swin Transformer)
-
+```text
+Yasser18/chest_x-ray
+```
 - Brain tumor classification from MRI (Vision Transformer)
+```text
+Yasser18/brain_tumor
+```
 
 -Models are implemented using Hugging Face Transformers and PyTorch.
 ---
