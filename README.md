@@ -40,47 +40,56 @@ A central Decision Agent coordinates agent selection based on user intent and in
 ├── rag_data.py
 ├── requirements.txt
 └── Docker
-Medical Image Analysis
+```
+
+```
+## Medical Image Analysis
 
 The system supports medical image inference tasks including:
 
-1- Skin lesion classification (Swin Transformer)
+- Skin lesion classification (Swin Transformer)
 
-2- Chest X-ray disease detection (Swin Transformer)
+- Chest X-ray disease detection (Swin Transformer)
 
-3- Brain tumor classification from MRI (Vision Transformer)
+- Brain tumor classification from MRI (Vision Transformer)
 
 Models are implemented using Hugging Face Transformers and PyTorch.
+```
 
-Retrieval-Augmented Generation (RAG)
+```
+## Retrieval-Augmented Generation (RAG)
 
 RAG is implemented using a Qdrant vector database and Azure OpenAI embeddings.
 Responses are generated only when sufficient, relevant medical context is retrieved, ensuring grounded and reliable outputs.
-
-Safety and Guardrails
+```
+```
+## Safety and Guardrails
 
 Safety is enforced through multiple layers:
 
-1- Human-in-the-loop validation for critical or low-confidence outputs
+- Human-in-the-loop validation for critical or low-confidence outputs
 
-2- Confidence thresholds for document retrieval
+- Confidence thresholds for document retrieval
 
-3- Source-grounded generation
+- Source-grounded generation
 
-4-Refusal or fallback behavior when evidence is insufficient
+-Refusal or fallback behavior when evidence is insufficient
 
 The system is designed to minimize hallucinations and prevent unsafe medical conclusions
-
+```
 ##Installation
 ```bash
 
 git clone https://github.com/Y1-18/Multi-Agent-Medical.git
 cd Multi-Agent-Medical
 pip install -r requirements.txt
+python main.py
 python app.py
-
+```
+```
 ##Disclaimer
 
-This system is for research and educational purposes only.
-It is not a medical device and must not be used for diagnosis or treatment.
-Always consult qualified healthcare professionals for medical decisions
+-This system is for research and educational purposes only.
+-It is not a medical device and must not be used for diagnosis or treatment.
+-Always consult qualified healthcare professionals for medical decisions
+```
