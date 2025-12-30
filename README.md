@@ -48,7 +48,9 @@ A central Decision Agent coordinates agent selection based on user intent and in
 The system supports medical image inference tasks including:
 
 - Skin lesion classification (Swin Transformer)
-
+```text
+Yasser18/swin_skin_lesion
+```
 - Chest X-ray disease detection (Swin Transformer)
 
 - Brain tumor classification from MRI (Vision Transformer)
