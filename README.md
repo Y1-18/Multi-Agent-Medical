@@ -53,14 +53,13 @@ The system supports medical image inference tasks including:
 
 - Brain tumor classification from MRI (Vision Transformer)
 
-Models are implemented using Hugging Face Transformers and PyTorch.
+-Models are implemented using Hugging Face Transformers and PyTorch.
 ---
 
 ---
 ## Retrieval-Augmented Generation (RAG)
 
-RAG is implemented using a Qdrant vector database and Azure OpenAI embeddings.
-Responses are generated only when sufficient, relevant medical context is retrieved, ensuring grounded and reliable outputs.
+- RAG is implemented using a Qdrant vector database and Azure OpenAI embeddings. Responses are generated only when sufficient, relevant medical context is retrieved, ensuring grounded and reliable outputs.
 ---
 
 ---
@@ -78,7 +77,7 @@ Safety is enforced through multiple layers:
 
 The system is designed to minimize hallucinations and prevent unsafe medical conclusions
 ---
-
+---
 ##Installation
 ```bash
 
